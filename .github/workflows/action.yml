@@ -12,5 +12,4 @@ jobs:
     steps:
       - name: Call remote URL
         run: |
-          curl -X POST -H "Content-Type: application/json" https://efb6dd2ed6f8.ngrok.app/webhook
-    
+          curl -X POST           -H "Content-Type: application/json"           -d '{}'           https://efb6dd2ed6f8.ngrok.app/webhook    
