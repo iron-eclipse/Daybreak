@@ -10,6 +10,12 @@ jobs:
   webhook:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Call remote URL
         run: |
-          curl -X POST           -H "Content-Type: application/json"           -d '{}'           https://efb6dd2ed6f8.ngrok.app/webhook    
+          curl -X POST \
+          -H "Content-Type: application/json" \
+          -d '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}' \
+          https://efb6dd2ed6f8.ngrok.app/webhook
+    
