@@ -1,0 +1,15 @@
+
+name: Trigger Remote URL
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call remote URL
+        run: curl -X POST https://efb6dd2ed6f8.ngrok.app/webhook
+    
